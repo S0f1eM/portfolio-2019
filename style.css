@@ -1,0 +1,709 @@
+/*RESET CSS ------------------------------ http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+     display: block;
+}
+ body {
+     line-height: 1.2;
+}
+ ol, ul {
+     list-style: none;
+}
+ blockquote, q {
+     quotes: none;
+}
+ blockquote:before, blockquote:after, q:before, q:after {
+     content: '';
+     content: none;
+}
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+}
+/*Styles généraux –––––––––––––––––––––––––––––––––––––––––––––––––– */
+ *, *::after, *::before {
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+ html * {
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+ body {
+     font: 1em 'quicksand', 'Quicksand' sans-serif, Arial;
+     margin: 0 auto;
+     color: #333;
+     background-color: #F6EFE7;
+     text-align: left;
+     width: 100%;
+}
+ h1, h2 {
+     font-family: 'chicleregular', 'Chicle', serif, Helvetica;
+}
+ h1 {
+     padding-bottom: 8%;
+}
+ h2 {
+     padding-bottom: 3%;
+}
+ .top-nav p {
+     font-size: 1.7rem;
+}
+ ul {
+     line-height: 1.5;
+}
+ li {
+     list-style-type: none;
+     line-height: 1.5;
+}
+ a {
+     color: #333;
+     text-decoration: none;
+}
+ a:hover, a:active, *:hover {
+     text-decoration: none;
+}
+ @keyframes beat {
+     0% {
+         transform: scale(1);
+    }
+     50% {
+         transform: scale(0.9);
+    }
+}
+ @keyframes bug {
+     0% {
+         transform: rotate(25deg);
+    }
+     50% {
+         transform: rotate(85deg);
+    }
+     100% {
+         transform: rotate(15deg);
+    }
+}
+
+@font-face {
+    font-family: 'chicleregular';
+    src: url('fonts/chicle.regular-webfont.eot');
+    src: url('fonts/chicle.regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chicle.regular-webfont.woff2') format('woff2'),
+         url('fonts/chicle.regular-webfont.woff') format('woff'),
+         url('fonts/chicle.regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'quicksand';
+    src: url('fonts/quicksand-regular-webfont.ttf');
+    src: url('fonts/quicksand-regular-webfont.eot');
+    src: url('fonts/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/quicksand-regular-webfont.woff2') format('woff2'),
+         url('fonts/quicksand-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'quicksand';
+    src: url('fonts/quicksand-bold-webfont.ttf');
+    src: url('fonts/quicksand-bold-webfont.eot');
+    src: url('fonts/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/quicksand-bold-webfont.woff2') format('woff2'),
+         url('fonts/quicksand-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+/*NAV -------navigation-right--------------------------------------------*/
+ .top-nav {
+     position: fixed;
+     right: 5vw;
+     z-index: 3;
+}
+ .top-nav ul {
+     display: flex;
+     flex-direction: row;
+}
+ .right-nav, .mobile-nav {
+     width: 40px;
+     position: fixed;
+     z-index: 3;
+     margin-top: 40vh;
+     right: 1vw;
+}
+ nav, p, li {
+     font-size: 1rem;
+}
+ .right-nav ul, .mobile-nav ul {
+     background: transparent 0 -1145px;
+     height: 100%;
+     max-height: 100%;
+     transform: translateY(-50%);
+}
+ .mobile-nav {
+     z-index: 4;
+}
+ .right-nav ul li a, .mobile-nav ul li a {
+     webkit-writing-mode: vertical-rl;
+     writing-mode: vertical-rl;
+}
+ .right-nav ul li a, .mobile-nav ul li a, .project-page .right-nav ul li a {
+     margin: 1vh 0;
+     font-size: 1.2rem;
+}
+ .project-page .right-nav ul li a {
+     margin: 1vh 0;
+}
+ .right-nav ul li a:hover, .mobile-nav ul li a:hover {
+     color: #333;
+}
+ .right-nav ul li:nth-child(1) {
+     padding-top: 8%;
+}
+ .right-nav ul li:nth-child(2), .right-nav ul li:nth-child(3) {
+     padding-top: 50%;
+}
+ .name {
+     margin-top: 2vh;
+     margin-bottom: 3vh;
+     font-family: 'chicleregular','Chicle', sans-serif;
+     cursor: pointer;
+     font-size: 1.8rem;
+     margin-left: -1.5vh;
+}
+ .mobile-nav ul li:nth-child(4) {
+     margin-top: 3vh;
+}
+ .name, .underlined, .underlined-h {
+     background-image: linear-gradient(to top, #FAE439 0, #FAE439 100%);
+     background-position: 20 0.5em;
+     background-size: 0 20%;
+     background-repeat: no-repeat;
+     transition: background .8s;
+}
+ .underlined-h {
+     background-position: 0.5em 20;
+     background-size: 20% 0;
+}
+ p.name:hover, .underlined:hover {
+     background-size: 50% 100%;
+     background-position: 0 -0.1em;
+}
+ .underlined-h:hover {
+     background-size: 100% 50%;
+}
+ .top-nav, .right-nav {
+     display:none;
+}
+ section {
+     bottom: 1%;
+     position: absolute;
+     padding: 0 10% 0 5%;
+}
+/*HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– */
+ .welcome-section h1 {
+     font-size: 2.8em;
+}
+/*PORTFOLIO ABOUT ---------------------------------------------------*/
+ .welcome-section, .about-section, .project-section, .contact-section {
+     display: flex;
+     flex-direction: column;
+     padding: 2% 5%;
+     height: 97vh;
+}
+ .colors-space {
+     padding-top: 3%;
+     display: flex;
+     align-items: flex-start;
+}
+ .colors-space div {
+     width: 15%;
+}
+ .project-page header h1, .about-section h2, .project-section h2, .contact-section h2 {
+     font-size: 3rem;
+}
+ p {
+     line-height: 1.8;
+}
+ .colors {
+     color:#FC4F48;
+     font-weight: 700;
+     transition: text-shadow 0.5s ease-in-out;
+}
+ .colors:hover {
+     color: #333;
+     transition: text-shadow 0.5s ease-in-out;
+     text-shadow: 0 -1.5px #FAE439, -5px -5px #43C098, 8px 8px #FC4F48, 10px -10px #FAE439;
+}
+ .tech-skills-box {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+    }
+ .tech-skills-box h3 {
+     font-weight: 700;
+     padding-bottom: 2%;
+ }
+ .tech-skills-box {
+     font-size: 1.4rem;
+}
+ .tech-skills-box > aside ul li {
+    font-size: 0.8rem;
+ }
+ .shapes {
+     font-family: 'chicleregular', 'Chicle', serif, Helvetica;
+     font-size: 1.5rem;
+}
+ .pdf {
+     padding-top: 3%;
+     font-size: 2rem;
+}
+ .resume {
+     letter-spacing: 2px;
+     font-family: 'chicleregular', "Chicle", serif, Helvetica;
+     transition: text-shadow 0.8s ease-in-out;
+     color: #FAE439;
+     text-shadow: -1.5px 0 #333, 0 1.5px #333, 1.5px 0 #333, 0 -1.5px #333;
+}
+ .resume:hover, .resume:focus {
+     color: #FAE439;
+     text-shadow: -1.5px 0 #333, 0 1.5px #333, 1.5px 0 #333, 0 -1.5px #333, -4px -4px #43C098, -6px -7px #FC4F48, -9px -10px #FAE439;
+}
+ .nomobile {
+     display: none;
+}
+
+/*PROJECT - PORTFOLIO –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .project-section h2 {
+     transition: text-shadow 0.8s ease-in-out;
+}
+ .project-section h2:hover {
+     color: #333;
+     transition: text-shadow 0.8s ease-in-out;
+     text-shadow: 0 -1.5px #FAE439, -20px 30px #43C098, 35px -25px #FC4F48, 60px -55px #FAE439;
+}
+ .playground{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+}
+ .play-links {
+     display: flex;
+     flex-direction: row;
+}
+ .iuem, .lgo, .amure, .lemar {
+     width: 40%;
+}
+ .isblue {
+     width: 80%;
+}
+ .playground {
+     padding-top: 3%;
+}
+ .playground ul {
+     margin-left: 8%;
+}
+ .playground ul li {
+     font-family: 'quicksand', 'Quicksand', sans-serif, Arial;
+     background-image: linear-gradient(to top, #FAE439 0, #FAE439 100%);
+     background-position: 0 0.5em;
+     background-size: 0 100%;
+     background-repeat: no-repeat;
+     transition: background .9s;
+     font-size: 1.1rem;
+}
+ .playground a, .playground a:hover, .playground a:focus, .playground a:active {
+     text-decoration:none;
+     color: #333;
+}
+ .playground ul li:hover {
+     background-size: 90% 40%;
+     background-position: -0.8em 0.5em;
+     color: #333;
+}
+ a.github {
+     color: #FAE439;
+     text-shadow: -1.5px 0 #333, 0 1.5px #333, 1.5px 0 #333, 0 -1.5px #333;
+     transition: text-shadow 0.8s ease-in-out;
+}
+ a.codepen {
+     color: #43C098;
+     text-shadow: -1.5px 0 #333, 0 1.5px #333, 1.5px 0 #333, 0 -1.5px #333;
+     transition: text-shadow 0.8s ease-in-out;
+}
+ a.github, a.codepen {
+     cursor: pointer;
+     margin-left: 50%;
+}
+ a.github:hover, a.github:focus, a.codepen:hover, a.codepen:focus, a.github:active, a.codepen:active {
+     color: #333;
+     transition: text-shadow 0.5s ease-in-out;
+}
+ a.github:hover, a.github:focus {
+     text-shadow: 2px -4px #FAE439;
+}
+ a.codepen:hover, a.codepen:focus {
+     text-shadow: 2px 2px #43C098;
+}
+ .portfolio {
+     -webkit-filter:grayscale(100%);
+     filter: grayscale(100%);
+     cursor: pointer;
+}
+ .portfolio:hover {
+     opacity: 0.9;
+     filter: grayscale(0);
+}
+/* PAGE DE PROJET –––––––––––––––––––––––––––––––––––––––––––––––––– */
+ .project-page {
+     padding: 5% 0;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     text-align: left;
+}
+ .project-page section {
+     bottom: auto;
+     top: 2%;
+     padding-right: 13%;
+
+}
+ .project-page h3 {
+     font-weight: 700;
+     padding-top: 3%;
+}
+ .project-page h1 {
+     font-family: 'chicleregular', 'Chicle', serif, Helvetica;
+     padding-bottom: 10%;
+     font-size: 2rem;
+}
+ .project-page li {
+     font-size: 0.9rem;
+}
+ .project-page header nav.mobile-nav ul li a p.name {
+     margin-left: -1vh;
+}
+ .projects-link {
+     color: #333;
+     font-weight: 700;
+}
+ .projects-link:hover, .projects-link:active, .projects-link:focus {
+     text-shadow: 0.5px 0.5px #43C098;
+}
+ img.iuem-logo, img.amure-logo {
+     width: 35%;
+}
+ img.isblue-logo {
+     width: 100%;
+}
+/*CONTACT –––––––––––––––––––––––––––––––––––––––––––––––––– */
+ address {
+     padding-top: 3%;
+}
+
+address > p {
+    padding-top: 1%;
+}
+ .corail {
+     background-color:#FC4F48;
+}
+ .green {
+     background-color: #43C098;
+}
+ .yellow {
+     background-color:#FAE439;
+}
+ .corail, .green, .yellow {
+     height: 2vh;
+}
+/* GENERAL MEDIA QUERIES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*MEDIA QUERIES 780 > 980px ----------------------------------------------*/
+ @media (min-width: 640px) and (max-width: 980px) {
+     .top-nav, .right-nav {
+         display:none;
+    }
+     .mobile-nav {
+         margin-top: 30vh;
+    }
+     section {
+         bottom: 6%;
+         max-height: 100%;
+    }
+     nav {
+         font-size: 1.3rem;
+    }
+     h1, h2, .about-section h2, .project-section h2, .contact-section h2 {
+         font-size: 2.5rem;
+    }
+     .welcome-section h1 {
+         font-size: 2.8em;
+    }
+     p {
+         font-size: 1.1rem;
+    }
+     p.name {
+         font-size: 1.6em;
+         margin: 1.4vh -1.5vh;
+    }
+     .playground ul li {
+         background-position: -3em 0.5em;
+    }
+     .playground ul {
+         margin-left: 0;
+    }
+     .playground ul li:hover {
+         background-size: 50% 30%;
+         background-position: -0.8em 1.5em;
+    }
+     .play-links {
+         display: flex;
+         flex-direction: row;
+         margin-left: 5%;
+    }
+     img.iuem-logo, img.amure-logo {
+         width: auto;
+         max-width: 20%;
+    }
+     img.isblue-logo {
+         width: auto;
+    }
+     .project-page section {
+         padding-right: 10%;
+    }
+     .nomobile {
+     display: block;
+    }
+}
+/*MEDIA QUERIES 769 > 980px ----------------------------------------------*/
+ @media (min-width: 769px) and (max-width: 980px) {
+     img.iuem-logo, img.amure-logo {
+         width: 30%;
+    }
+     .project-page h1 {
+         padding-bottom: 5%;
+    }
+     .iuem, .lgo, .amure, .lemar {
+         width: 30%;
+         padding: 0 1%;
+    }
+     .isblue {
+         width: 50%;
+    }
+     section {
+     bottom: 4%;
+    }
+}
+/*MEDIA QUERIES max 980px ----------------------------------------------*/
+ @media screen and (max-width: 980px) {
+     .corail, .green, .yellow {
+         width: 100%;
+         height: 1vh;
+    }
+     .top-nav, .right-nav {
+         display:none;
+    }
+}
+/*MEDIA QUERIES 980 > 1280px ----------------------------------------------*/
+ @media screen and (min-width: 981px) {
+     h2 {
+         padding-bottom: 3%;
+     }
+     .mobile-nav {
+         display: none;
+    }
+     .top-nav, .right-nav {
+         display:flex;
+    }
+     .right-nav {
+         margin-top: 35vh;
+    }
+     .name {
+         margin-left: 2vh;
+    }
+     .welcome-section h1 {
+         font-size: 4em;
+    }
+     .project-page h1 {
+         font-size: 2.5em;
+         padding-bottom: 2%;
+    }
+     .work-project, .playground{
+         display: flex;
+         flex-wrap: nowrap;
+    }
+    .work-project {
+         flex-direction: column;
+    }
+    .playground {
+         flex-direction: row;
+    }
+    .iuem, .lgo, .amure, .lemar {
+         width: 22%;
+         padding: 0 1%;
+    }
+    .isblue {
+         width: 80%;
+    }
+     .playground ul li {
+         font-size: 1.3rem;
+    }
+     .play-links {
+         display: flex;
+         flex-direction: row;
+         margin-left: 8%;
+    }
+     .name {
+         font-size: 2rem;
+    }
+     .about-section h2, .project-section h2, .contact-section h2 {
+         font-size: 3rem;
+    }
+     p {
+         font-size: 1.2em;
+    }
+     .project-page section {
+        top: 8%;
+        padding-right: 5%;
+    }
+    .project-page {
+        padding-bottom: 5%;
+    }
+     .project-section h3 {
+         font-size: 1.3rem;
+    }
+     p.name {
+         font-size: 1.5em;
+         margin-bottom: 3vh;
+    }
+     .tech-skills-box {
+         font-size: 1.2em;
+         margin-top: 2vh;
+         display: flex;
+         flex-direction: row;
+    }
+     .tech-skills-box > aside ul li {
+         font-size: 1rem;
+    }
+     .project-page {
+         text-align: left;
+         font-size: 1.2em;
+         padding: 5%;
+    }
+     .project-page .right-nav ul li a {
+         margin: 2vh 0;
+         font-size: 1.4rem;
+    }
+     .management-project {
+        display: flex;
+        flex-direction: row;
+     }
+     img.iuem-logo, img.amure-logo {
+         width: 20%;
+    }
+     img.isblue-logo {
+         width: auto;
+    }
+     .colors-space {
+     padding-top: 5%;
+    }
+     .nomobile {
+     display: block;
+    }
+    section {
+     bottom: 6%;
+    }
+}
+/* MEDIA QUERIES SCREEN min 1281px ------------------------------------------*/
+ @media screen and (min-width: 1281px) {
+     .mobile-nav {
+         display: none;
+    }
+     .top-nav, .right-nav {
+         display:flex;
+    }
+     .about-section, 
+     .contact-section, 
+     .project-section {
+         height: 97vh;
+    }
+     .about-section h2, 
+     .project-section h2,
+     .contact-section h2 {
+         font-size: 3.5rem;
+    }
+     .right-nav ul li a {
+         font-size: 1.5em;
+    }
+     p {
+         font-size: 1.3rem;
+         line-height: 1.5;
+    }
+     h1 {
+         font-size: 4.5rem;
+    }
+     h2 {
+         font-size: 2.8em;
+         padding-bottom: 3%;
+    }
+     .playground ul li:hover {
+         background-size: 100% 40%;
+    }
+     .right-nav ul li a {
+         font-size: 1.7em;
+    }
+     p.name {
+         font-size: 2.5rem;
+    }
+     .portfolio {
+         height: 10vh;
+         width: auto;
+    }
+    .work-project a {
+        display: flex;
+        flex-direction: row;
+    }
+    .work-project img {
+         width: auto;
+         margin: 2%;
+    }
+     .playground ul {
+         margin-left: 0;
+    }
+     .project-page {
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+    }
+     .project-description {
+         display: flex;
+         flex-direction: column;
+         padding-bottom: 3%;
+    }
+     .project-page header div {
+         margin: 0 2vw;
+    }
+     .project-description article {
+         padding: 0 5% 3%;
+    }
+     .project-page h2 {
+         padding: 4% 0 3%;
+         font-size: 1.5rem;
+    }
+     .project-page h3 {
+          padding: 3% 0 1%;
+         font-size: 1.8rem;
+    }
+     .project-description {
+         line-height: 1.3;
+    }
+}
+ 
